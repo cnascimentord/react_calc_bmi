@@ -1,14 +1,14 @@
 var BMIBox = React.createClass({
   render: function() {
     let style = {
-      marginTop: 0,
+      marginTop: '20px',
       marginBottom: '20px'
     }
     return (
       <div className="bmi-box">
         <div className="ribbon"><span>NEW</span></div>
         <header className="text-center">
-          <img src="./img/centimeter.svg"/>
+          <img src="./img/body.svg" height="80"/>
           <h3 style={style}>BMI CALCULATOR</h3>
         </header>
         <BodyForm />
@@ -57,15 +57,15 @@ var BodyForm = React.createClass({
   },
 
   doCalc: function(myWeight, myHeight, myGender) {
-    if(myWeight > 0 && myHeight > 0) {
-      var finalBmi = myWeight/(myHeight/100*myHeight/100)
-      if(finalBmi < 18.5) {
+    if (myWeight > 0 && myHeight > 0) {
+      let finalBmi = myWeight/(myHeight/100*myHeight/100);
+      if (finalBmi < 18.5) {
         return "That you are too thin."
       }
-      if(finalBmi > 18.5 && finalBmi < 25) {
+      if (finalBmi > 18.5 && finalBmi < 25) {
         return "That you are healthy."
       }
-      if(finalBmi > 25) {
+      if (finalBmi > 25) {
         return "That you have overweight."
       }
     } else {
@@ -98,7 +98,7 @@ var BodyForm = React.createClass({
             </select>
           </div>
           <div className="pull-right">
-            <button type="button" className="btn btn-link" onClick={this.resetDisplayBMI}>reset</button>
+            <a href="javascript:void(0)" className="btn btn-link" onClick={this.resetDisplayBMI}>reset</a>
             <button type="submit" className="btn btn-primary" onClick={this.updateDisplayBMI}>Calculate</button>
           </div>
         </div>
