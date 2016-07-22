@@ -1,2 +1,2 @@
-# react_calc_bmi
-Just a react.js example to calculate your BMI
+# React BMI calculator
+Just a React.js example to calculate your BMI
