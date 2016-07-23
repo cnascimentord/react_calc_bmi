@@ -57,19 +57,16 @@ var BodyForm = React.createClass({
   },
 
   doCalc: function(myWeight, myHeight, myGender) {
-    if (myWeight > 0 && myHeight > 0) {
-      let finalBmi = myWeight/(myHeight/100*myHeight/100);
-      if (finalBmi < 18.5) {
-        return "That you are too thin."
-      }
-      if (finalBmi > 18.5 && finalBmi < 25) {
-        return "That you are healthy."
-      }
-      if (finalBmi > 25) {
-        return "That you have overweight."
-      }
-    } else {
-      return "Please Fill in everything correctly"
+    let finalBmi = myWeight/(myHeight/100*myHeight/100);
+    if (!(myWeight > 0 && myHeight > 0)) return "Please Fill in everything correctly"
+    if (finalBmi < 18.5) {
+      return "That you are too thin."
+    }
+    if (finalBmi > 18.5 && finalBmi < 25) {
+      return "That you are healthy."
+    }
+    if (finalBmi > 25) {
+      return "That you have overweight."
     }
   },
 
