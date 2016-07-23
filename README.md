@@ -2,6 +2,7 @@
 Just a React.js example to calculate your BMI
 
 ## Setup
+Clone the project and after run:
 ```bash
 $ npm install
 ```
